@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+	<head>
+		<title>Survey</title>
+		<style>
+
+			body {
+				  background-image: url('./assets/img/background.png');
+				  background-repeat: no-repeat;
+
+  				  background-attachment: fixed; 
+  				  background-size: 100% 100%;
+				}
+
+
+			#centred-panel {
+
+			}	
+		
+		.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+		.box2 {
+  display: flex;
+ flex-wrap: wrap;
+  flex-direction: row;
+  min-width: 500px!;
+  align-content: space-between;
+  justify-content: space-between;
+}
+
+
+
+
+		</style>
+	</head>
+	<body class="default-page-padding normal-font">
+		
+		<br>
+		<br>
+		<br>
+
+		<div class="box">
+	  		<div>
+	  			<h1>يف تقييم ماقام به القسم  بشكل عام ؟</h1>
+	  			<br><br><br>
+	  			<div class="box2">
+	  				<button id="happyButton">
+	  					Happy
+	  				</button>
+
+						<button id="neutralButton">
+	  					neutral
+	  				</button>
+
+	  				<button id="sadButon">
+	  					sad
+	  				</button>
+	  			</div>		
+	  		</div>
+		</div>
+
+		<div id="centred-panel">
+
+			
+		</div>
+
+		<script>
+
+			const happyButton = document.querySelector("#happyButton");
+			const sadButton = document.querySelector("#sadButton");
+			const neutralButton = document.querySelector("#neutralButton");
+
+			
+
+			happyButton.addEventListener("click", (event) => {
+			    alert("happy....");
+			    
+			});
+
+			sadButon.addEventListener("click", (event) => {
+			    alert("sad....");
+			    
+			});
+
+			neutralButton.addEventListener("click", (event) => {
+			    alert("neutral....");
+			    
+			});
+</script>
+
+	</body>
+</html>
