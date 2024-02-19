@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="ar" >
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -15,7 +15,7 @@
 		<style>
 
 			body {
-				  background-image: url('./assets/img/background.png');
+				  background-image: url('./assets/img/background2.png');
 				  background-color: transparent;
 				  background-repeat: no-repeat;
 
@@ -34,6 +34,12 @@
 				 padding: 40px;
 				 margin: 15px;
 			}
+
+			.emoji {
+  font-size: 60px;
+  color: red;
+  vertical-align: middle;
+}
 
 		.box {
   display: flex;
@@ -63,28 +69,26 @@
 
 		<div class="box">
 	  		<div>
-	  			<h1>يف تقييم ماقام به القسم  بشكل عام ؟</h1>
+	  			<h1>كيف كانت زيارتك لمعرض إرث ؟ </h1>
 	  			<br><br><br>
 	  			<div class="box2">
-	  				<button id="aButton" class="cc">
+	  				<!--button id="aButton" class="cc">
 	  					<img src="assets/img/01.png">
-	  				</button>
+	  				</button-->
 
 	  				<button id="bButton" class="cc">
-	  					<img src="assets/img/02.png">
+	  					<p class="emoji">&#x1F44D;</p>
 	  				</button>
 
-	  				<button id="cButton" class="cc">
-	  					<img src="assets/img/03.png">
-	  				</button>
+	  				
 
 	  				<button id="dButton" class="cc">
-	  					<img src="assets/img/04.png">
+	  					<p class="emoji">&#x1F44E;</p>
 	  				</button>
 
-	  				<button id="eButton" class="cc">
+	  				<!--button id="eButton" class="cc">
 	  					<img src="assets/img/05.png">
-	  				</button>
+	  				</button-->
 
 						
 	  			</div>		
@@ -98,35 +102,25 @@
 
 		<script>
 
-			const aButton = document.querySelector("#aButton");
+			
 			const bButton = document.querySelector("#bButton");
-			const cButton = document.querySelector("#cButton");
+			
 			const dButton = document.querySelector("#dButton");
-			const eButton = document.querySelector("#eButton");
 			
 
 
 
-			aButton.addEventListener("click", (event) => {
-			   storeListEntriesOnline("Very Good");
-			    
-			});
+			
 			bButton.addEventListener("click", (event) => {
 			   storeListEntriesOnline("Good");
 			    
 			});
-			cButton.addEventListener("click", (event) => {
-			   storeListEntriesOnline("Neutral");
-			    
-			});
+			
 			dButton.addEventListener("click", (event) => {
 			   storeListEntriesOnline("Bad");
 			    
 			});
-			eButton.addEventListener("click", (event) => {
-			   storeListEntriesOnline("Very Bad");
-			    
-			});
+			
 
 			
 
