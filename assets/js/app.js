@@ -40,12 +40,15 @@ angular.module('app.pages', [])
                     return vm.selections.includes(sel)
                 }
 
-                vm.saveSelections = function() {
-                    alert("Thank You!")
-                   const url = 'https://luuzpufaukjczubvmtpd.supabase.co/rest/v1/lt_survey_responses';
-                   const api_key = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRreXdwanl3ZnVqeGNnZnNkZGtpIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTc3Mzc3NTEsImV4cCI6MjAxMzMxMzc1MX0.U7oMU2FsO4vutdrecHMTpZMNtzc1swHalthT_6ShxgM';
-                   const api = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRreXdwanl3ZnVqeGNnZnNkZGtpIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTc3Mzc3NTEsImV4cCI6MjAxMzMxMzc1MX0.U7oMU2FsO4vutdrecHMTpZMNtzc1swHalthT_6ShxgM';
-                   const content_type = "Content-Type: application/json";
+                vm.saveSelections = function() {    
+
+                    if (vm.selections.length  == 0 ) {
+                        alert("Please select one or more options");
+                    } else {
+                         const url = 'https://luuzpufaukjczubvmtpd.supabase.co/rest/v1/lt_survey_responses';
+                   const api_key = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx1dXpwdWZhdWtqY3p1YnZtdHBkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQ0MzEzODMsImV4cCI6MjA1MDAwNzM4M30.q7ZC_OfopRjTIHGixcjFJmJ1Oylhcs429jr_VIS-3k0';
+                   const api = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx1dXpwdWZhdWtqY3p1YnZtdHBkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQ0MzEzODMsImV4cCI6MjA1MDAwNzM4M30.q7ZC_OfopRjTIHGixcjFJmJ1Oylhcs429jr_VIS-3k0'
+                    const content_type = "Content-Type: application/json";
 
 
                     $.ajax({
@@ -57,11 +60,16 @@ angular.module('app.pages', [])
                             'apikey': api,
                             'Content-Type': 'application/json',
                         },
-                        data: JSON.stringify( { rating: rating}),
+                        data: JSON.stringify( { selections: vm.selections}),
                         success: function(data){
                             alert(data);
                         }
-                    });
+                        });
+                        alert("Thank You!")
+                    }
+
+                    
+                  
                 }
 
               
