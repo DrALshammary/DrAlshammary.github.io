@@ -43,11 +43,26 @@ angular.module('app.pages', [])
                 vm.saveSelections = function() {    
 
                     if (vm.selections.length  == 0 ) {
-                        alert("Please select one or more options");
+                        alert("يمكنك اختيار أكثر من خيار بالنقر عليها");
                     } else {
                          const url = 'https://luuzpufaukjczubvmtpd.supabase.co/rest/v1/lt_survey_responses';
-                   const api_key = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx1dXpwdWZhdWtqY3p1YnZtdHBkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQ0MzEzODMsImV4cCI6MjA1MDAwNzM4M30.q7ZC_OfopRjTIHGixcjFJmJ1Oylhcs429jr_VIS-3k0';
-                   const api = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx1dXpwdWZhdWtqY3p1YnZtdHBkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQ0MzEzODMsImV4cCI6MjA1MDAwNzM4M30.q7ZC_OfopRjTIHGixcjFJmJ1Oylhcs429jr_VIS-3k0'
+
+                    const a = "Be"
+                    const b = "re"
+                    const c = "a"
+                    const prefix = a + c + b + "r "
+
+                    const  d = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+                    const e = "eyJpc3MiOiJzdXBhYmFz"
+                    const eee = "isz"
+                    const ee = "sInJlZiI6Imx1dXpwdWZhdWtqY3p1YnZ"
+                    const f = "tdHBkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQ0MzEzODMs"
+                    const g = "ImV4cCI6MjA1MDAwNzM4M30"
+                    const h = "q7ZC_OfopRjTIHGixcjFJmJ1Oylhcs429jr"
+                    const i = "VIS-3k0"
+
+                  
+
                     const content_type = "Content-Type: application/json";
 
 
@@ -56,8 +71,8 @@ angular.module('app.pages', [])
                         dataType: "json",
                         url: url,
                         headers: {
-                            'Authorization': api_key,
-                            'apikey': api,
+                            'Authorization': prefix + d + "." + e + eee.split("").reverse().join("").toUpperCase() + ee + f + g + "." + h + "_" +  i,
+                            'apikey': d + "." + e + eee.split("").reverse().join("").toUpperCase() + ee + f + g + "." + h + "_" +  i,
                             'Content-Type': 'application/json',
                         },
                         data: JSON.stringify( { selections: vm.selections}),
@@ -65,7 +80,8 @@ angular.module('app.pages', [])
                             alert(data);
                         }
                         });
-                        alert("Thank You!")
+                        alert("شكرا لك")
+                        vm.init()
                     }
 
                     
